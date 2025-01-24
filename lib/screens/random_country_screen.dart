@@ -27,7 +27,11 @@ class _RandomCountryScreenState extends State<RandomCountryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Random Country')),
+      appBar: AppBar(
+        title: const Text('Рандом изберена држава'),
+        backgroundColor: Colors.blue[900],
+        foregroundColor: Colors.white,
+      ),
       body: FutureBuilder<Country>(
         future: _randomCountry,
         builder: (context, snapshot) {
@@ -44,11 +48,14 @@ class _RandomCountryScreenState extends State<RandomCountryScreen> {
                 children: [
                   Image.network(country.flag, height: 200),
                   const SizedBox(height: 16),
-                  Text('Name: ${country.name}', style: const TextStyle(fontSize: 18)),
+                  Text('Name: ${country.name}',
+                      style: const TextStyle(fontSize: 18)),
                   const SizedBox(height: 8),
-                  Text('Capital: ${country.capital}', style: const TextStyle(fontSize: 18)),
+                  Text('Capital: ${country.capital}',
+                      style: const TextStyle(fontSize: 18)),
                   const SizedBox(height: 8),
-                  Text('Region: ${country.region}', style: const TextStyle(fontSize: 18)),
+                  Text('Region: ${country.region}',
+                      style: const TextStyle(fontSize: 18)),
                 ],
               ),
             );

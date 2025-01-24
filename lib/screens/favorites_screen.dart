@@ -30,7 +30,11 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Favorite Countries')),
+      appBar: AppBar(
+        title: const Text('Ваши омиелни држави'),
+        backgroundColor: Colors.blue[900],
+        foregroundColor: Colors.white,
+      ),
       body: FutureBuilder<List<Country>>(
         future: ApiService().fetchCountries(),
         builder: (context, snapshot) {
@@ -59,7 +63,8 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CountryDetailScreen(country: country),
+                        builder: (context) =>
+                            CountryDetailScreen(country: country),
                       ),
                     );
                   },
