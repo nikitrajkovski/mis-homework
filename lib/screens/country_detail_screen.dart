@@ -34,7 +34,6 @@ class CountryDetailScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-              // FutureBuilder to fetch and display Wikipedia data
               FutureBuilder<String>(
                 future: fetchCountryDetails(country.name),
                 builder: (context, snapshot) {
